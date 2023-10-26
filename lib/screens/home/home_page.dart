@@ -1,22 +1,61 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class _HomePageState extends State<HomePage> {
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+            color: Colors.black
+        ),
+        child: Column(
+            children: [
+              Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(213, 219, 226, 1)
+                  ),
+
+                  width: 500,
+                  height: MediaQuery.of(context).size.height*1,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                border: Border.all(
+                                  color: Colors.grey,
+                                )
+                            ),
+                            width: 200,
+                            height: 60,
+                            child: Center(
+                              child: Text(
+                                  'Bangkok'
+                              ),
+                            ),
+                          ),
+                        )
+                      ]
+                  ),
+                ),
+              )
+            ]
+        ),
       ),
-      home: const HomePage(),
     );
   }
+
 }
